@@ -46,29 +46,29 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 ## Deployment Instructions:
 
-**0. Use Git to clone this repository to a local machine**
+**1. Use Git to clone this repository to a local machine**
   * In Git Bash, change the current working directory to the location where this repository should be cloned
   * In the directory run the command: `git clone https://github.com/austinesmith/cdk-and-vuejs-in-s3.git`
 <br/>
 
-**1. Build a production bundle from the Vue.js application source code**
+**2. Build a production bundle from the Vue.js application source code**
   * In the `*/cdk-and-vuejs-in-s3/demo-vuejs` directory run the command: `npm run build`
   * This will output the Vue.js application to a `dist` folder within its project directory
 <br/>
 
-**2. *(optional)* Inspect the CloudFormation template to be created by the CDK application source code**
+**3. *(optional)* Inspect the CloudFormation template to be created by the CDK application source code**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk synth`
   * The `cdk synth` command will output the CloudFormation template to Stdout structured in YAML
   * The output will be a human-readable YAML file used for easy inspection prior to deployment
 <br/>
 
-**3. Bootstrap the AWS environment before deployment**
+**4. Bootstrap the AWS environment before deployment**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
   * The `cdk bootstrap` command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
   * [Read: AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 <br/>
 
-**4. Deploy the CDK application to an S3 bucket in the AWS account**
+**5. Deploy the CDK application to an S3 bucket in the AWS account**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk deploy`
   * The `cdk deploy` command will egress a CloudFormation template to the AWS account configured within the AWS CLI Tools
   * The CDK application source to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
@@ -76,12 +76,12 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * The `cdk deploy` command's output to Stdout will contain a confirmation as well as a publicly accessible URL
 <br/>
 
-**5. Access the deployed application via public internet**
+**6. Access the deployed application via public internet**
   * Use the URL from the `cdk deploy` command output to access the newly deployed Vue.js application via a web browser
   * Since the Vue.js application was configured by the CDK application to be public, this URL can be shared to and accessed by anyone on the public internet
 <br/>
 
-**6. *(optional)* Inspect the newly created resources by logging into the AWS Management Console**
+**7. *(optional)* Inspect the newly created resources by logging into the AWS Management Console**
   * The newly created resources can be viewed in the S3 and CloudFormation sections of the AWS Management Console
   * AWS S3 is an object storage web service that logically separates its files into buckets as key-value pairs
   * The file objects of the Vue.js web application are stored inside created buckets in the S3 section of the AWS Management Console
@@ -108,6 +108,8 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * Each step of the deployment process was granularized into simple commands that can be scripted or quickly executed
 
   * At no point during the deployment process was access to the AWS management console required
+
+  * The source logic of this CDK application contained in `*/cdk-and-vuejs-in-s3/demo-cdk/lib/demo-cdk-stack.ts` consists of `8` lines of written code and generates a CloudFormation template consisting of `191` lines of YAML.  This contrast is an example of how the AWS CDK Toolkit can streamline the development process.
 <br/><br/>
 
 
