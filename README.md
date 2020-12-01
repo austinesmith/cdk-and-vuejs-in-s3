@@ -9,14 +9,14 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/><br/><br/>
 
 
-# Instructions
+# Project Instructions
 
-### Prerequisites
+## Prerequisites:
 
 <br/>
 
-**1.** An Amazon Web Services account
-<br/>
+**1. An Amazon Web Services account**
+<br/><br/>
 
 **2. AWS CLI Tools installed**
   * [Download the AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
@@ -29,20 +29,20 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * [Using Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 <br/>
 
-**4.** Node.js javascript runtime and Node.js Package Manager (NPM) installed
+**4. Node.js javascript runtime and Node.js Package Manager (NPM) installed  **
   * [Download Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
 <br/>
 
-**5.** (tentative) VueCLI installed (globally)
+**5. (tentative) VueCLI installed *(globally)***
   * Can be installed via npm by running the global command: `npm install -g @vue/cli`
 <br/>
 
-**6.** AWS CDK Toolkit installed (globally)
+**6. AWS CDK Toolkit installed *(globally)***
   * Can be installed via npm by running the global command: `npm install -g aws-cdk`
 <br/><br/><br/>
 
 
-### Deployment Instructions 
+## Deployment Instructions:
 
 1. (tentative) Build a production bundle from the Vue.js application source code
     * In the `*/cdk-and-vuejs-in-s3/demo-vuejs` directory run the command: `npm run build`
@@ -57,8 +57,8 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 3. (tentative) Bootstrap the AWS environment before deployment
     * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
-    * The bootstrap command will create an initial stack that includes resources used by the CDK Toolkit
-    * In this case, it will create the S3 bucket that will contain the template and assets for the application
+    * The bootstrap command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
+    * In this case, it will create the S3 bucket that will contain the CloudFormation template and assets for the CDK application
     * [AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 <br/>
 
