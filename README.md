@@ -18,11 +18,11 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 **1.** An Amazon Web Services account
 <br/>
 
-**2.** AWS CLI Tools installed
+**2. AWS CLI Tools installed**
   * [Download the AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 <br/>
 
-**3.** AWS access keys configured for AWS account authentication
+**3. AWS access keys configured for AWS account authentication**
   * Access keys are created in the AWS management console
   * Access keys must then be added to the AWS CLI tools by running the global command: `aws configure`
   * Best practice is to delete the key after configuration for account security
