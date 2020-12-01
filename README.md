@@ -49,6 +49,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 **0. Use Git to clone this repository to a local machine**
   * In Git Bash, change the current working directory to the location where this repository should be cloned
   * In the directory run the command: `git clone https://github.com/austinesmith/cdk-and-vuejs-in-s3.git`
+<br/>
 
 **1. ~~(tentative)~~ Build a production bundle from the Vue.js application source code**
   * In the `*/cdk-and-vuejs-in-s3/demo-vuejs` directory run the command: `npm run build`
@@ -98,7 +99,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
   * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the `cdk deploy` command
   * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
-  * This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
+    * This structure AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
 <br/><br/><br/><br/>
 
 # Project Takeaways
