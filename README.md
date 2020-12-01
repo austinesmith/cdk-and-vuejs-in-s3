@@ -32,15 +32,23 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/>
 
 **5. ~~(tentative)~~ VueCLI installed *(globally)***
-  * Can be installed via npm by running the global command: `npm install -g @vue/cli`
+  * Can be installed via NPM by running the global command: `npm install -g @vue/cli`
 <br/>
 
 **6. AWS CDK Toolkit installed *(globally)***
-  * Can be installed via npm by running the global command: `npm install -g aws-cdk`
+  * Can be installed via NPM by running the global command: `npm install -g aws-cdk`
+<br/>
+  
+**7. Git Software Change Management installed**
+  * [Download: git-scm](https://git-scm.com/downloads)
 <br/><br/><br/><br/>
 
 
 ## Deployment Instructions:
+
+**0. Use Git to clone this repository to a local machine**
+  * In Git Bash, change the current working directory to the location where this repository should be cloned
+  * In the directory run the command: `git clone https://github.com/austinesmith/cdk-and-vuejs-in-s3.git`
 
 **1. ~~(tentative)~~ Build a production bundle from the Vue.js application source code**
   * In the `*/cdk-and-vuejs-in-s3/demo-vuejs` directory run the command: `npm run build`
@@ -88,7 +96,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 **1. Reverse all changes made by the deployment returning the AWS account to its original state**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
-  * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the deploy command
+  * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the `cdk deploy` command
   * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
   * This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
 <br/><br/><br/><br/>
