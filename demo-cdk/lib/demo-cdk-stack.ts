@@ -22,7 +22,7 @@ export class DemoCdkStack extends cdk.Stack {
     // constructs new instance of BucketDeployment class
     const deployment = new s3Deployment.BucketDeployment(this, "deployStaticWebsite", {
       // directory of the web asset
-      sources: [s3Deployment.Source.asset("./web-app")],
+      sources: [s3Deployment.Source.asset("../demo-vuejs/dist")],
       // (experimental) The S3 bucket to sync the contents of the zip file to.)
       destinationBucket: myBucket
    });

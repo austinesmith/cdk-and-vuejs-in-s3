@@ -65,7 +65,6 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 **3. ~~(tentative)~~ Bootstrap the AWS environment before deployment**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
   * The `cdk bootstrap` command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
-  * For this project, it will create the S3 bucket that will contain the CDK generated CloudFormation template and the assets for the Vue.js web application
   * [Read: AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 <br/>
 
