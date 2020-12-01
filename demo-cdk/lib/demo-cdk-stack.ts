@@ -7,15 +7,14 @@ export class DemoCdkStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    super(scope, id, props);
-
     // The code that defines your stack goes here
     // create bucket
     const myBucket = new s3.Bucket(this, "WebsiteBucketForDemo", {
       // allow bucket to access to public internet
       publicReadAccess: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      websiteIndexDocument: "index.html"
+      websiteIndexDocument: "index.html",
+      websiteErrorDocument: "index.html"
     });
 
     // create deployment resource
