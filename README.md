@@ -1,4 +1,4 @@
-# Demonstration: Using CDK to automate deployment of a Vue.js application to AWS S3
+# **Demonstration:** Using CDK to automate deployment of a Vue.js application to AWS S3
 
 This project uses The **AWS Cloud Development Kit** with Typescript to *leverage automation* with **Vue.js** as the target web application.
 
@@ -10,7 +10,6 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 
 # Project Instructions
-<br/>
 
 ## Prerequisites:
 
@@ -87,8 +86,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 ## Tear Down Instructions:
 
-**1. Return the AWS account to its original state at the start of this demonstration**
-**1. Reverse all changes made during deployment and return the AWS account to its original state**
+**1. Reverse all changes made by the deployment returning the AWS account to its original state**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
   * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the deploy command
   * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
@@ -96,9 +94,8 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/><br/><br/>
 
 # Project Takeaways
-<br/>
 
-### Deployment Automation
+### Deployment Automation:
 
   * Each step of the deployment process was granularized into simple commands that can be scripted or quickly executed
 
@@ -106,7 +103,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/><br/>
 
 
-### Tear Down Automation
+### Tear Down Automation:
 
   * Using services in an AWS account can incur a cost and it does not make sense to pay for resources not being used
 
