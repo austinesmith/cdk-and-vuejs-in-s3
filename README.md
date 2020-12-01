@@ -1,6 +1,6 @@
 # Demonstration: How to use the AWS CDK Toolkit to automate deployment of a Vue.js application to AWS S3
 
-This project uses The **AWS Cloud Development Kit** with Typescript to *leverage automation* with **Vue.js** as the target web application.
+This project uses the **AWS Cloud Development Kit** with Typescript to *leverage automation* with **Vue.js** as the target web application.
 
 The files included and instructions following automate the deployment of a publicly accessible Vue.js web application to an S3 bucket.
 
@@ -58,22 +58,22 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 **2. *(optional)* ~~(tentative)~~ Inspect the CloudFormation template to be created by the CDK application source code**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk synth`
-  * The `cdk synth` command will output the CloudFormation template structured in YAML to Stdout
+  * The `cdk synth` command will output the CloudFormation template to Stdout structured in YAML
   * The output will be a human-readable YAML file used for easy inspection prior to deployment
 <br/>
 
 **3. ~~(tentative)~~ Bootstrap the AWS environment before deployment**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
   * The `cdk bootstrap` command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
-  * For this project, it will create the S3 bucket that will contain the CloudFormation template and assets for the CDK application
+  * For this project, it will create the S3 bucket that will contain the CDK generated CloudFormation template and the assets for the Vue.js web application
   * [Read: AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 <br/>
 
 **4. ~~(tentative)~~ Deploy the CDK application to an S3 bucket in the AWS account**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk deploy`
   * The `cdk deploy` command will egress a CloudFormation template to the AWS account configured within the AWS CLI Tools
-  * The CDK application to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
-  * The result is a CloudFormation stack in the account that creates an S3 bucket containing the Vue.js application
+  * The CDK application source to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
+  * The result is a CloudFormation stack that creates an S3 bucket containing the Vue.js application in the AWS account
   * The `cdk deploy` command's output to Stdout will contain a confirmation as well as a publicly accessible URL
 <br/>
 
@@ -83,7 +83,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/>
 
 **6. *(optional)* Inspect the newly created resources by logging into the AWS Management Console**
-  * The newly created resources be viewed in the S3 and CloudFormation sections of the AWS Management Console
+  * The newly created resources can be viewed in the S3 and CloudFormation sections of the AWS Management Console
   * AWS S3 is an object storage web service that logically separates its files into buckets as key-value pairs
   * The file objects of the Vue.js web application are stored inside created buckets in the S3 section of the AWS Management Console
   * Access to these objects is controlled by an associated resource policy (or more specifically, an implicit deny bucket policy)
@@ -116,7 +116,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
   * Using services in an AWS account can incur a cost and it does not make sense to pay for resources not being used
 
-  * Since both the deployment and the tear down process can be automated, these strategies can be used to significantly reduce cost
+  * Since both the deployment and the tear down process can be automated, these strategies can be used to reduce costs
 <br/><br/>
 
 
