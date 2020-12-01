@@ -5,7 +5,7 @@ This project uses CDK with Typescript for leveraging automation and Vue.js for a
 The included files and instructions following automate the deployment of a publicly accessible Vue.js web application to an S3 bucket.
 
 The purpose is to demonstrate the AWS best practice of 'Operational Excellence' by "performing operations as code" as defined by the AWS Well-Architected Framework
-https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
+[The 5 Pillars of the AWS Well Architected Framework](https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/)
 
 
 
@@ -15,17 +15,17 @@ https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-frame
 
 1. An Amazon Web Services account
 
-2. AWS CLI tools installed
-..* https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+2. AWS CLI Tools installed
+..* [Download the AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 
 3. AWS access keys configured for AWS account authentication
 ..* Access keys are created in the AWS management console
 ..* Access keys must then be added to the AWS CLI tools using cmd: 'aws configure'
 ..* Best practice is to delete the key after configuration for account security
-..* https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+..* [Using Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
-4. Node.js javascript runtime and Node.js package manager (NPM) installed
-..* https://nodejs.org/en/download/package-manager/
+4. Node.js javascript runtime and Node.js Package Manager (NPM) installed
+..* [Download Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
 
 5. (tentative) VueCLI installed (globally)
 ..* Can be installed via npm using cmd: 'npm install -g @vue/cli'
@@ -44,13 +44,13 @@ https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-frame
 2. (optional)(tentative) Inspect the CloudFormation template to be created by the CDK application source code 
 ..* In the '*/cdk-and-vuejs-in-s3/demo-cdk' directory run 'cdk synth'
 ..* The synth command will output the CloudFormation template structured in YAML to Stdout
-..* The output will be a human-readable YAML file for easy inspect prior to deployment
+..* The output will be a human-readable YAML file for easy inspection prior to deployment
 
 3. (tentative) Bootstrap the AWS environment before deployment
 ..* In the '*/cdk-and-vuejs-in-s3/demo-cdk' directory run 'cdk bootstrap'
 ..* The bootstrap command will create an initial stack that includes resources used by the CDK Toolkit
 ..* In this case, it will create an S3 bucket that will contain the template and assets for the application
-..* https://cdkworkshop.com/20-typescript/20-create-project/500-deploy.html
+..* [AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 
 4. (tentative) Deploy the CDK application to an S3 bucket in the AWS account
 ..* In the '*/cdk-and-vuejs-in-s3/demo-cdk' directory run 'cdk deploy'
@@ -78,7 +78,7 @@ https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-frame
 ..* In the '*/cdk-and-vuejs-in-s3/demo-cdk' directory run 'cdk destroy'
 ..* The destroy command will automatically reverse all changes made to the AWS account by the deploy command
 ..* CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
-..* This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) fashion
+..* This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
 
 
 # Project Takeaways
