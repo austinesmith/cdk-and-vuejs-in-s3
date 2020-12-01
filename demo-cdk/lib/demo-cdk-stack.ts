@@ -1,6 +1,7 @@
 import * as cdk from '@aws-cdk/core';
 import * as s3 from '@aws-cdk/aws-s3';
 import * as s3Deployment from '@aws-cdk/aws-s3-deployment';
+import { CfnOutput } from '@aws-cdk/core';
 // install cmd: 'npm i @aws-cdk/aws-s3-deployment'
 
 export class DemoCdkStack extends cdk.Stack {
@@ -12,7 +13,8 @@ export class DemoCdkStack extends cdk.Stack {
     const myBucket = new s3.Bucket(this, "WebsiteBucketForDemo", {
       // allow bucket to access to public internet
       publicReadAccess: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      // switched from RemovalPolicy.DESTROY because apparently can't delete bucket with 'cdk destory'
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "index.html"
     });
@@ -24,6 +26,13 @@ export class DemoCdkStack extends cdk.Stack {
       sources: [s3Deployment.Source.asset("../demo-vuejs/dist")],
       // (experimental) The S3 bucket to sync the contents of the zip file to.)
       destinationBucket: myBucket
+   });
+
+   
+   // return for website URL
+   new CfnOutput(this, "URL", {
+     description: "publicly accessible url",
+     value: myBucket.bucketWebsiteUrl
    });
   }
 }
