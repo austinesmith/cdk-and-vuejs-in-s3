@@ -17,26 +17,26 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/>
 
 **2.** AWS CLI Tools installed<br/>
-    * [Download the AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+  * [Download the AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 <br/>
 
 **3.** AWS access keys configured for AWS account authentication<br/>
-    * Access keys are created in the AWS management console
-    * Access keys must then be added to the AWS CLI tools by running the command: `aws configure`
-    * Best practice is to delete the key after configuration for account security
-    * [Using Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+  * Access keys are created in the AWS management console
+  * Access keys must then be added to the AWS CLI tools by running the command: `aws configure`
+  * Best practice is to delete the key after configuration for account security
+  * [Using Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 <br/>
 
 **4.** Node.js javascript runtime and Node.js Package Manager (NPM) installed<br/>
-    * [Download Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
+  * [Download Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
 <br/>
 
 **5.** (tentative) VueCLI installed (globally)<br/>
-    * Can be installed via npm by running the command: `npm install -g @vue/cli`
+  * Can be installed via npm by running the command: `npm install -g @vue/cli`
 <br/>
 
 **6.** AWS CDK Toolkit installed (globally)<br/>
-    * Can be installed via npm by running the command: `npm install -g aws-cdk`
+  * Can be installed via npm by running the command: `npm install -g aws-cdk`
 <br/><br/><br/>
 
 
