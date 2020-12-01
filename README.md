@@ -41,7 +41,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   
 **7. Git Software Change Management installed**
   * [Download: git-scm](https://git-scm.com/downloads)
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
 
 ## Deployment Instructions:
@@ -89,13 +89,13 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * Access to these objects is controlled by an associated resource policy (or more specifically, an implicit deny bucket policy)
   * The CDK application generates CloudFormation templates that can be viewed as stacks in the CloudFormation section of the AWS Management Console
   * Every resource, file, and permission that was added to the AWS account for the Vue.js application is explicitly defined by the stacks created
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
 
 
 ## Tear Down Instructions:
 
-**1. Reverse all changes made by the deployment returning the AWS account to its original state**
+**1. Reverse all changes made by the deployment and return the AWS account to its original state**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
   * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the `cdk deploy` command
   * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
