@@ -105,7 +105,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 ### Deployment Automation:
 
-  * Each step of the deployment process was granularized into simple commands that can be scripted or quickly executed
+  * Each step of the deployment process was granularized into simple commands that could be scripted or quickly executed
 
   * At no point during the deployment process was access to the AWS management console required
 
@@ -117,7 +117,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
   * Using services in an AWS account can incur a cost and it does not make sense to pay for resources not being used
 
-  * Since both the deployment and the tear down process can be automated, these strategies can be used to reduce costs
+  * Since both the deployment and the tear down process can be automated, modeling your *infrastructure as code* can significantly reduce costs
 <br/><br/>
 
 
