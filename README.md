@@ -1,12 +1,12 @@
-# **Demonstration:** Using CDK to automate deployment of a Vue.js application to AWS S3
+# Demonstration: How to use AWS CDK Toolkit to automate the deployment of a Vue.js application to AWS S3
 
 This project uses The **AWS Cloud Development Kit** with Typescript to *leverage automation* with **Vue.js** as the target web application.
 
 The files included and instructions following automate the deployment of a publicly accessible Vue.js web application to an S3 bucket.
 
-The purpose is to demonstrate the AWS best practice of **Operational Excellence** by *performing operations as code* as defined by the AWS Well-Architected Framework
-<br/>[The 5 Pillars of the AWS Well Architected Framework](https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/)
-<br/><br/><br/>
+The purpose is to demonstrate the AWS best practice of **Operational Excellence** by performing *operations as code* as defined by the **AWS Well-Architected Framework**
+<br/>[Read: The 5 Pillars of the AWS Well Architected Framework](https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/)
+<br/><br/><br/><br/>
 
 
 # Project Instructions
@@ -17,18 +17,18 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 <br/><br/>
 
 **2. AWS CLI Tools installed**
-  * [Download the AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+  * [Download: AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 <br/>
 
 **3. AWS access keys configured for AWS account authentication**
   * Access keys are created in the AWS management console
   * Access keys must then be added to the AWS CLI tools by running the global command: `aws configure`
   * Best practice is to delete the key after configuration for account security
-  * [Using Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+  * [Read: Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 <br/>
 
 **4. Node.js javascript runtime and Node.js Package Manager (NPM) installed**
-  * [Download Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
+  * [Download: Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
 <br/>
 
 **5. ~~(tentative)~~ VueCLI installed *(globally)***
@@ -37,7 +37,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 **6. AWS CDK Toolkit installed *(globally)***
   * Can be installed via npm by running the global command: `npm install -g aws-cdk`
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 
 ## Deployment Instructions:
@@ -56,8 +56,8 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 **3. ~~(tentative)~~ Bootstrap the AWS environment before deployment**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
   * The `cdk bootstrap` command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
-  * In this case, it will create the S3 bucket that will contain the CloudFormation template and assets for the CDK application
-  * [AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
+  * For this project, it will create the S3 bucket that will contain the CloudFormation template and assets for the CDK application
+  * [Read: AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 <br/>
 
 **4. ~~(tentative)~~ Deploy the CDK application to an S3 bucket in the AWS account**
@@ -65,7 +65,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * The `cdk deploy` command will egress a CloudFormation template to the AWS account configured within the AWS CLI Tools
   * The CDK application to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
   * The result is a CloudFormation stack in the account that creates an S3 bucket containing the Vue.js application
-  * The deploy command's output to Stdout will contain a confirmation as well as a publicly accessible URL
+  * The `cdk deploy` command's output to Stdout will contain a confirmation as well as a publicly accessible URL
 <br/>
 
 **5. *(optional)* Access the deployed application via public internet**
@@ -80,7 +80,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * Access to these objects is controlled by an associated resource policy (or more specifically, an implicit deny bucket policy)
   * The CDK application generates CloudFormation templates that can be viewed as stacks in the CloudFormation section of the AWS Management Console
   * Every resource, file, and permission that was added to the AWS account for the Vue.js application is explicitly defined by the stacks created
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 
 
@@ -91,7 +91,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the deploy command
   * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
   * This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 # Project Takeaways
 
