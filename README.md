@@ -1,4 +1,4 @@
-# Demonstration: How to use AWS CDK Toolkit to automate the deployment of a Vue.js application to AWS S3
+# Demonstration: How to use the AWS CDK Toolkit to automate deployment of a Vue.js application to AWS S3
 
 This project uses The **AWS Cloud Development Kit** with Typescript to *leverage automation* with **Vue.js** as the target web application.
 
