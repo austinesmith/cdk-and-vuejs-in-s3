@@ -29,11 +29,11 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * [Using Access Keys with AWS CLI Tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 <br/>
 
-**4. Node.js javascript runtime and Node.js Package Manager (NPM) installed  **
+**4. Node.js javascript runtime and Node.js Package Manager (NPM) installed**
   * [Download Node.js Package Manager](https://nodejs.org/en/download/package-manager/)
 <br/>
 
-**5. (tentative) VueCLI installed *(globally)***
+**5. ~~(tentative)~~ VueCLI installed *(globally)***
   * Can be installed via npm by running the global command: `npm install -g @vue/cli`
 <br/>
 
@@ -44,54 +44,55 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 ## Deployment Instructions:
 
-1. (tentative) Build a production bundle from the Vue.js application source code
-    * In the `*/cdk-and-vuejs-in-s3/demo-vuejs` directory run the command: `npm run build`
-    * This will output the Vue.js application to a `dist` folder within its project directory
+**1. ~~(tentative)~~ Build a production bundle from the Vue.js application source code**
+  * In the `*/cdk-and-vuejs-in-s3/demo-vuejs` directory run the command: `npm run build`
+  * This will output the Vue.js application to a `dist` folder within its project directory
 <br/>
 
-2. (optional)(tentative) Inspect the CloudFormation template to be created by the CDK application source code 
-    * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk synth`
-    * The `cdk synth` command will output the CloudFormation template structured in YAML to Stdout
-    * The output will be a human-readable YAML file used for easy inspection prior to deployment
+**2. *(optional)*~~(tentative)~~ Inspect the CloudFormation template to be created by the CDK application source code**
+  * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk synth`
+  * The `cdk synth` command will output the CloudFormation template structured in YAML to Stdout
+  * The output will be a human-readable YAML file used for easy inspection prior to deployment
 <br/>
 
-3. (tentative) Bootstrap the AWS environment before deployment
-    * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
-    * The bootstrap command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
-    * In this case, it will create the S3 bucket that will contain the CloudFormation template and assets for the CDK application
-    * [AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
+**3. ~~(tentative)~~ Bootstrap the AWS environment before deployment**
+  * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk bootstrap`
+  * The `cdk bootstrap` command will create an initial CloudFormation stack that includes resources needed by the CDK Toolkit
+  * In this case, it will create the S3 bucket that will contain the CloudFormation template and assets for the CDK application
+  * [AWS CDK Bootstrapping Documentation](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html)
 <br/>
 
-4. (tentative) Deploy the CDK application to an S3 bucket in the AWS account
-    * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk deploy`
-    * The deploy command will egress a CloudFormation template to the AWS account configured within the AWS CLI Tools
-    * The CDK application to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
-    * The result is a CloudFormation stack in the account that creates an S3 bucket containing the Vue.js application
-    * The deploy command's output to Stdout will contain a confirmation as well as a publically accessible URL
+**4. ~~(tentative)~~ Deploy the CDK application to an S3 bucket in the AWS account**
+  * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk deploy`
+  * The `cdk deploy` command will egress a CloudFormation template to the AWS account configured within the AWS CLI Tools
+  * The CDK application to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
+  * The result is a CloudFormation stack in the account that creates an S3 bucket containing the Vue.js application
+  * The deploy command's output to Stdout will contain a confirmation as well as a publically accessible URL
 <br/>
 
-5. (optional) Access the application
-    * Use the URL from the `cdk deploy` command output to access the newly deployed Vue.js application via a web browser
-    * Since the Vue.js application was configured by the CDK application to be public, this URL can be shared to and accessed by anyone on the public internet
+**5. *(optional)* Access the deployed application via public internet**
+  * Use the URL from the `cdk deploy` command output to access the newly deployed Vue.js application via a web browser
+  * Since the Vue.js application was configured by the CDK application to be public, this URL can be shared to and accessed by anyone on the public internet
 <br/>
 
-6. (optional) Inspect the newly created resources in the AWS Management Console
-    * AWS S3 is an object storage web service that logically separates its files into buckets as key-value pairs
-    * The file objects of the Vue.js web application are stored inside created buckets in the S3 section of the AWS Management Console
-    * Access to these objects is controlled by an associated resource policy (or more specifically, an implicit deny bucket policy)
-    * The CDK application generates CloudFormation templates that can be viewed as stacks in the CloudFormation section of the AWS Management Console
-    * Every resource, file, and permission that was added to the AWS account for the Vue.js application is explicitly defined by the stacks created
+**6. *(optional)* Inspect the newly created resources by logging into the AWS Management Console**
+  * The newly created resources be viewed in the S3 and CloudFormation sections of the AWS Management Console
+  * AWS S3 is an object storage web service that logically separates its files into buckets as key-value pairs
+  * The file objects of the Vue.js web application are stored inside created buckets in the S3 section of the AWS Management Console
+  * Access to these objects is controlled by an associated resource policy (or more specifically, an implicit deny bucket policy)
+  * The CDK application generates CloudFormation templates that can be viewed as stacks in the CloudFormation section of the AWS Management Console
+  * Every resource, file, and permission that was added to the AWS account for the Vue.js application is explicitly defined by the stacks created
 <br/><br/><br/>
 
 
 
-### Tear Down Instructions
+## Tear Down Instructions
 
-1. Return the AWS account to its original state at the start of this demonstration
-    * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
-    * The destroy command will automatically reverse all changes made to the AWS account by the deploy command
-    * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
-    * This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
+**1. Return the AWS account to its original state at the start of this demonstration**
+  * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
+  * The destroy command will automatically reverse all the changes made to the AWS account by the deploy command
+  * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
+  * This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
 <br/><br/><br/>
 
 # Project Takeaways
