@@ -10,10 +10,9 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 
 # Project Instructions
+<br/>
 
 ## Prerequisites:
-
-<br/>
 
 **1. An Amazon Web Services account**
 <br/><br/>
@@ -49,7 +48,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * This will output the Vue.js application to a `dist` folder within its project directory
 <br/>
 
-**2. *(optional)*~~(tentative)~~ Inspect the CloudFormation template to be created by the CDK application source code**
+**2. *(optional)* ~~(tentative)~~ Inspect the CloudFormation template to be created by the CDK application source code**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run the command: `cdk synth`
   * The `cdk synth` command will output the CloudFormation template structured in YAML to Stdout
   * The output will be a human-readable YAML file used for easy inspection prior to deployment
@@ -67,7 +66,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * The `cdk deploy` command will egress a CloudFormation template to the AWS account configured within the AWS CLI Tools
   * The CDK application to be deployed is defined by the `app:` key in `*/cdk-and-vuejs-in-s3/demo-cdk/cdk.json`
   * The result is a CloudFormation stack in the account that creates an S3 bucket containing the Vue.js application
-  * The deploy command's output to Stdout will contain a confirmation as well as a publically accessible URL
+  * The deploy command's output to Stdout will contain a confirmation as well as a publicly accessible URL
 <br/>
 
 **5. *(optional)* Access the deployed application via public internet**
@@ -86,23 +85,25 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
 
 
 
-## Tear Down Instructions
+## Tear Down Instructions:
 
 **1. Return the AWS account to its original state at the start of this demonstration**
+**1. Reverse all changes made during deployment and return the AWS account to its original state**
   * In the `*/cdk-and-vuejs-in-s3/demo-cdk` directory run `cdk destroy`
-  * The destroy command will automatically reverse all the changes made to the AWS account by the deploy command
+  * The `cdk destroy` command will automatically reverse all the changes made to the AWS account by the deploy command
   * CloudFormation templates define how resources are provisioned within the AWS account, but they are stored in a stack data structure until they are explicitly removed
   * This makes it easy for AWS to remove resources that were created by the CDK application in a LIFO (last in, first out) order
 <br/><br/><br/>
 
 # Project Takeaways
+<br/>
 
 ### Deployment Automation
 
   * Each step of the deployment process was granularized into simple commands that can be scripted or quickly executed
 
   * At no point during the deployment process was access to the AWS management console required
-<br/><br/><br/>
+<br/><br/>
 
 
 ### Tear Down Automation
@@ -110,7 +111,7 @@ The purpose is to demonstrate the AWS best practice of **Operational Excellence*
   * Using services in an AWS account can incur a cost and it does not make sense to pay for resources not being used
 
   * Since both the deployment and the tear down process can be automated, these strategies can be used to significantly reduce cost
-<br/><br/><br/>
+<br/><br/>
 
 
 
